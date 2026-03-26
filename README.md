@@ -32,7 +32,7 @@ uv run csvpak build \
    --output contacts-empty.redbean.com
 
 # Run the distributable (edits are staged in a temporary SQLite file) on port 9000
-./example.redbean.com -p 9000
+./contacts.redbean.com -p 9000
 ```
 
 Open <http://127.0.0.1:9000> in a web browser.
