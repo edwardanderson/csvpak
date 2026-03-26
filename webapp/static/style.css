@@ -1,0 +1,16 @@
+.footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--pico-spacing);
+}
+
+.footer-actions form,
+.footer-actions button {
+  margin-bottom: 0;
+}
+
+/* Make table container scrollable for pagination */
+#rows-container {
+  max-height: 70vh;
+  overflow-y: auto;
+}

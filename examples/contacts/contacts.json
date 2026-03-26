@@ -1,0 +1,16 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "tables": [
+    {
+      "url": "contacts.csv",
+      "tableSchema": {
+        "columns": [
+          { "name": "name", "datatype": "string", "required": true, "titles": "Name" },
+          { "name": "email", "datatype": "string", "required": true, "titles": "Email" },
+          { "name": "age", "datatype": "integer", "titles": "Age" },
+          { "name": "subscribed", "datatype": "boolean", "titles": "Subscribed" }
+        ]
+      }
+    }
+  ]
+}

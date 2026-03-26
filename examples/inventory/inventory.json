@@ -1,0 +1,18 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "tables": [
+    {
+      "url": "inventory.csv",
+      "tableSchema": {
+        "columns": [
+          { "name": "sku", "datatype": "string", "required": true, "titles": "SKU" },
+          { "name": "name", "datatype": "string", "required": true, "titles": "Name" },
+          { "name": "quantity", "datatype": "integer", "titles": "Quantity" },
+          { "name": "price", "datatype": "number", "titles": "Price" },
+          { "name": "last_stocked", "datatype": "date", "titles": "Last stocked" }
+        ],
+        "primaryKey": "sku"
+      }
+    }
+  ]
+}
