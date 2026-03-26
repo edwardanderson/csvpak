@@ -39,11 +39,11 @@ Open <http://127.0.0.1:9000> in a web browser.
 
 ```bash
 # Export the embedded data back to CSV
-uv run csvpak export example.redbean.com --output path/to/file.csv
+uv run csvpak export contacts.redbean.com --output path/to/file.csv
 
 # Remove intermediary StoreAsset artefacts, keeping only the original DB and
 # the most-recent saved version
-uv run csvpak vacuum example.redbean.com
+uv run csvpak vacuum contacts.redbean.com
 ```
 
 ## How it works
