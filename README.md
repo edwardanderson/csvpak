@@ -2,10 +2,10 @@
 
 **csvpak** is a tool for packaging [CSV files](https://en.wikipedia.org/wiki/Comma-separated_values) as cross-platform standalone data editing applications.
 
-It uses [redbean](https://redbean.dev/) to produce a single, portable executable that bundles the app and data, [CSV on the Web](https://csvw.org/) to describe column types and validation metadata in an open schema format, and [htmx](https://htmx.org/) to keep the editor UI server-driven and lightweight without a heavy front-end build step.
+It uses [redbean](https://redbean.dev/) to produce a single, portable executable that bundles the app and data; [CSV on the Web](https://csvw.org/) to describe column types and validation metadata in an open schema format; and [htmx](https://htmx.org/) to keep the editor UI server-driven and lightweight without a heavy front-end build step.
 
-> [!NOTE]
-> **csvpak** was developed with the assistance of GitHub Copilot.
+> [!WARNING]
+> **csvpak** is just a prototype at this stage. It's not recommended for use in production.
 
 ## Installation
 
@@ -48,15 +48,19 @@ uv run csvpak vacuum contacts.redbean.com
 
 ## How it works
 
-1. **Build** — `csvpak build` creates a SQLite database from the CSVW schema,
-   optionally imports CSV rows when `--data` is supplied, then embeds it in the
-   redbean executable alongside the Lua webapp.
-2. **Edit** — when the distributable is run, the embedded SQLite is copied to a
-   temporary file on the host system. All record edits are written there.
-3. **Save and package** — clicking **Package data and exit** writes staged
-   changes back into the distributable archive and removes the temporary file.
-4. **Exit without saving** — shutting down without saving keeps the temporary
-   SQLite file so staged changes can be resumed next run.
+1. **Build**
+   Create a new a SQLite database from the CSVW schema, optionally importing CSV
+   rows when `--data` is supplied, then embeds it in the redbean executable
+   alongside the Lua webapp.
+2. **Edit**
+   When the distributable is run, the embedded SQLite is copied to a temporary file
+   on the host system. All record edits are written there.
+3. **Save**
+   Clicking **Package data and exit** writes staged changes back into the
+   distributable archive, removes the temporary file, and shuts the server down.
+4. **Exit**
+   Shutting down without saving keeps the temporary SQLite file so staged changes
+   can be resumed next run.
 
 ## Features
 
@@ -69,3 +73,8 @@ uv run csvpak vacuum contacts.redbean.com
 - `csvpak vacuum` compacts intermediary archive copies created by repeated saves
 - Schema and dynamic forms driven by [CSVW](https://csvw.org/) metadata
 - CSV import/export for interoperability with spreadsheets and other tools
+
+## AI
+
+> [!NOTE]
+> **csvpak** was developed with the assistance of GitHub Copilot.
