@@ -4,6 +4,8 @@
 
 It uses [redbean](https://redbean.dev/) to produce a single, portable executable that bundles the app and data; [CSV on the Web](https://csvw.org/) to describe column types and validation metadata in an open schema format; and [htmx](https://htmx.org/) to keep the editor UI server-driven and lightweight without a heavy front-end build step.
 
+![Screenshot of the **csvpak** interface showing the examples/contacts data and schema](header.png)
+
 > [!WARNING]
 > **csvpak** is just a prototype at this stage. It's not recommended for use in production.
 
