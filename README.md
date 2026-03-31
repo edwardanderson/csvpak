@@ -49,18 +49,25 @@ uv run csvpak vacuum contacts.redbean.com
 ## How it works
 
 1. **Build**
-   Create a new a SQLite database from the CSVW schema, optionally importing CSV
-   rows when `--data` is supplied, then embeds it in the redbean executable
-   alongside the Lua webapp.
+
+    Create a new a SQLite database from the CSVW schema, optionally importing CSV
+    rows when `--data` is supplied, then embeds it in the redbean executable
+    alongside the Lua webapp.
+
 2. **Edit**
-   When the distributable is run, the embedded SQLite is copied to a temporary file
-   on the host system. All record edits are written there.
+
+    When the distributable is run, the embedded SQLite is copied to a temporary file
+    on the host system. All record edits are written there.
+
 3. **Save**
-   Clicking **Package data and exit** writes staged changes back into the
-   distributable archive, removes the temporary file, and shuts the server down.
+
+    Clicking **Package data and exit** writes staged changes back into the
+    distributable archive, removes the temporary file, and shuts the server down.
+
 4. **Exit**
-   Shutting down without saving keeps the temporary SQLite file so staged changes
-   can be resumed next run.
+
+    Shutting down without saving keeps the temporary SQLite file so staged changes
+    can be resumed next run.
 
 ## Features
 
